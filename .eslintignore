@@ -1,0 +1,5 @@
+/documentation/**
+/node_modules/**
+/src/fuse-base/**
+/src/sidebar-config.json
+/src/config.json

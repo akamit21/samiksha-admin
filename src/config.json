@@ -1,0 +1,43 @@
+{
+  "localForage": {
+    "name": "Dashboard-App",
+    "version": 1.0,
+    "size": 4980736,
+    "storeName": "local_sql",
+    "description": "Local Storage for Cache"
+  },
+  "fusionAuth": {
+    "fusionAuthURL": "http://auth.samagra.io:9011",
+    "fusionAuthAPIKey": "YFpyHxhW0-NoKRwQrXgCU5QIAQq8nBNhE--i5_n3pTU",
+    "fusionAuthApplicationId": "a664a16a-95dd-41fc-9b9b-e45fb49cf128"
+  },
+  "theme": "initial-theme",
+  "hasura": {
+    "serverUrl": "http://139.59.46.189:8080/v1/graphql"
+  },
+  "jsonServer": {
+    "serverUrl": "http://159.89.167.11:8080"
+  },
+  "appMeta": {
+    "name": "Samiksha Application Control Console",
+    "loginPage": {
+      "title": "Samiksha, Himachal Pradesh",
+      "subTitle": "Application Control Console."
+    }
+  },
+  "style": {
+    "hideJSONEditorHeader": false
+  },
+  "languages": [
+    {
+      "id": "en",
+      "title": "English",
+      "flag": "us"
+    },
+    {
+      "id": "tr",
+      "title": "Turkish",
+      "flag": "tr"
+    }
+  ]
+}

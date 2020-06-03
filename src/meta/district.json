@@ -1,0 +1,14 @@
+[
+  { "id": "CHAMBA", "name": "CHAMBA" },
+  { "id": "HAMIRPUR", "name": "HAMIRPUR" },
+  { "id": "KANGRA", "name": "KANGRA" },
+  { "id": "KINNAUR", "name": "KINNAUR" },
+  { "id": "KULLU", "name": "KULLU" },
+  { "id": "LAHAUL AND SPITI", "name": "LAHAUL AND SPITI" },
+  { "id": "MANDI", "name": "MANDI" },
+  { "id": "SHIMLA", "name": "SHIMLA" },
+  { "id": "SIRMAUR", "name": "SIRMAUR" },
+  { "id": "SOLAN", "name": "SOLAN" },
+  { "id": "UNA", "name": "UNA" },
+  { "id": "NONE", "name": "NONE" }
+]

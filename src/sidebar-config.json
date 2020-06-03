@@ -1,0 +1,144 @@
+[
+  {
+    "name": "Saksham Dashboards",
+    "icon": "BarChartIcon",
+    "url": "e/saksham",
+    "children": [
+      {
+        "name": "Secondary Dashboard",
+        "icon": "SettingsIcon",
+        "url": "e/secondary-dashboard",
+        "children": [
+          {
+            "name": "State Level",
+            "icon": "SettingsIcon",
+            "url": "e/secondary/state-dashboard"
+          },
+          {
+            "name": "District Level",
+            "icon": "SettingsIcon",
+            "url": "e/secondary/district-dashboard"
+          },
+          {
+            "name": "Block Level",
+            "icon": "SettingsIcon",
+            "url": "e/secondary/block-dashboard"
+          },
+          {
+            "name": "School Level",
+            "icon": "SettingsIcon",
+            "url": "e/secondary/school-dashboard"
+          }
+        ]
+      },
+      {
+        "name": "Elementary Dashboard",
+        "icon": "SettingsIcon",
+        "url": "e/elementary-dashboard",
+        "children": [
+          {
+            "name": "State Level",
+            "icon": "SettingsIcon",
+            "url": "e/elementary/state-dashboard"
+          },
+          {
+            "name": "District Level",
+            "icon": "SettingsIcon",
+            "url": "e/elementary/district-dashboard"
+          },
+          {
+            "name": "Block Level",
+            "icon": "SettingsIcon",
+            "url": "e/elementary/block-dashboard"
+          },
+          {
+            "name": "School Level",
+            "icon": "SettingsIcon",
+            "url": "e/elementary/school-dashboard"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Application Configuration",
+    "url": "e/app-config",
+    "icon": "TableChartIcon",
+    "children": [
+      {
+        "name": "User List",
+        "icon": "UsersIcon",
+        "url": "user"
+      },
+      {
+        "name": "Administrative Location List",
+        "icon": "Location2Icon",
+        "url": "location"
+      }
+    ]
+  },
+  {
+    "name": "Application Data",
+    "url": "e/application",
+    "icon": "DashboardIcon",
+    "children": [
+      {
+        "name": "ODK-Entries",
+        "icon": "SettingsIcon",
+        "url": "e/odk-entries",
+        "children": [
+          {
+            "name": "Elementary Mentor Visit",
+            "icon": "SettingsIcon",
+            "url": "ele-mentor-visits-v1s"
+          },
+          {
+            "name": "Secondary Mentor Visit",
+            "icon": "SettingsIcon",
+            "url": "sec-mentor-visits-v1s"
+          },
+          {
+            "name": "Sampark Program VIsit",
+            "icon": "SettingsIcon",
+            "url": "sampark-pro-visits-v1s"
+          },
+          {
+            "name": "SLO Visit V1",
+            "icon": "SettingsIcon",
+            "url": "slo-visits-v1s"
+          },
+          {
+            "name": "SLO Visit V2",
+            "icon": "SettingsIcon",
+            "url": "slo-visits-v2s"
+          },
+          {
+            "name": "SAT VIsit",
+            "icon": "SettingsIcon",
+            "url": "sat-visits"
+          },
+          {
+            "name": "Elementary SSA Visit",
+            "icon": "SettingsIcon",
+            "url": "ele-ssa-visits-v1s"
+          },
+          {
+            "name": "Secondary SSA Visit",
+            "icon": "SettingsIcon",
+            "url": "sec-ssa-visits-v1s"
+          },
+          {
+            "name": "Elementary Monitor Visit",
+            "icon": "SettingsIcon",
+            "url": "ele-monitor-visits-v4s"
+          },
+          {
+            "name": "Secondary Monitor VIsit",
+            "icon": "SettingsIcon",
+            "url": "sec-monitor-visits-v1s"
+          }
+        ]
+      }
+    ]
+  }
+]
