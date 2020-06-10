@@ -6,59 +6,27 @@ import {
   ArrayField,
   ImageField,
   SingleFieldList,
-  Show,
-  SimpleShowLayout,
+  TextInput,
   Filter,
-  SelectInput,
-  AutocompleteInput,
-  useQuery,
+  Pagination,
 } from 'react-admin';
 
-// district
-// const disctritChoices = require('../../../meta/district.json');
-
-// const SearchFilter = (props) => {
-//   const extraFilter = {};
-//   const { filterValues } = props;
-//   if (filterValues && filterValues.location && filterValues.location.district) {
-//     extraFilter.district = filterValues.location.district;
-//   }
-
-//   const { data } = useQuery({
-//     type: 'getList',
-//     resource: 'location',
-//     payload: {
-//       pagination: {},
-//       sort: { field: 'block', order: 'ASC' },
-//       filter: { distinctOnFields: ['block'], ...extraFilter },
-//     },
-//   });
-
-//   if (!data) return null;
-//   const blocks = data.map((item) => {
-//     return {
-//       id: item.block,
-//       name: item.block,
-//     };
-//   });
-//   return (
-//     <Filter {...props}>
-//       <SelectInput
-//         label='District'
-//         choices={disctritChoices}
-//         source='data.district'
-//       >
-//         <AutocompleteInput optionText='district' />
-//       </SelectInput>
-//       <SelectInput label='Block' choices={blocks} source='data.block'>
-//         <AutocompleteInput optionText='block' />
-//       </SelectInput>
-//     </Filter>
-//   );
-// };
+/**
+ * Search filter
+ * @param {*} props
+ */
+const SearchFilter = (props) => (
+  <Filter {...props}>
+    <TextInput label='Search by name*' source='data.name' alwaysOn />
+  </Filter>
+);
 
 export const SATVisitList = (props) => (
-  <List {...props}>
+  <List
+    {...props}
+    filters={<SearchFilter />}
+    pagination={<Pagination perPage={1} style={{ float: 'left' }} />}
+  >
     <Datagrid>
       <TextField label='Note' source='data[0].noteX' />
       <TextField label='Username' source='data[0].username' />

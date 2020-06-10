@@ -6,10 +6,27 @@ import {
   ArrayField,
   ImageField,
   SingleFieldList,
+  TextInput,
+  Filter,
+  Pagination,
 } from 'react-admin';
 
+/**
+ * Search filter
+ * @param {*} props
+ */
+const SearchFilter = (props) => (
+  <Filter {...props}>
+    <TextInput label='Search by name*' source='data.name' alwaysOn />
+  </Filter>
+);
+
 export const SLOVisitV2List = (props) => (
-  <List {...props}>
+  <List
+    {...props}
+    filters={<SearchFilter />}
+    pagination={<Pagination perPage={1} style={{ float: 'left' }} />}
+  >
     <Datagrid>
       <TextField label='Username' source='data[0].username' />
       <TextField label='Designation' source='data[0].designation' />
