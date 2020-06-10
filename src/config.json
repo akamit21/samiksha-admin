@@ -13,15 +13,15 @@
   },
   "theme": "initial-theme",
   "hasura": {
-    "serverUrl": "http://139.59.46.189:8080/v1/graphql"
+    "serverUrl": "http://165.22.210.187:8080/v1/graphql"
   },
   "jsonServer": {
     "serverUrl": "http://159.89.167.11:8080"
   },
   "appMeta": {
-    "name": "Samiksha Application Control Console",
+    "name": "Saksham Shiksha Application Control Console",
     "loginPage": {
-      "title": "Samiksha, Himachal Pradesh",
+      "title": "Saksham Shiksha, Haryana",
       "subTitle": "Application Control Console."
     }
   },

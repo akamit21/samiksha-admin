@@ -29,7 +29,7 @@ const config = require('../../config');
 // dependency injection
 const headers = {
   'content-type': 'application/json',
-  'x-hasura-admin-secret': 'samarthDBHasuraPW5678',
+  'x-hasura-admin-secret': 'umangbhola18',
 };
 
 export const buildFieldsCustom = (type) => {
