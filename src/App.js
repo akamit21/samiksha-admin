@@ -20,6 +20,12 @@ import UserList from './react-admin-base/resources/Userlist';
 import authProviderPackage from './react-admin-base/authProvider';
 import createAdminStore from './react-admin-base/createAdminStore';
 import dP from './react-admin-base/dataProviders';
+
+import {
+  SchoolCreate,
+  SchoolEdit,
+  SchoolList,
+} from './react-admin-base/resources/School';
 import { ElemMentorVisitList } from './react-admin-base/resources/odk/ElemMentorVisit';
 import { ElemMonitorVisitList } from './react-admin-base/resources/odk/ElemMonitorVisit';
 import { ElemSSAVisitList } from './react-admin-base/resources/odk/ElemSSAVisit';
@@ -93,6 +99,14 @@ class App extends React.Component {
               list={UserList}
               edit={UserEdit}
               create={UserCreate}
+              icon={ComponentsIcon}
+            />
+
+            <Resource
+              name='haryana_schools'
+              list={SchoolList}
+              create={SchoolCreate}
+              edit={SchoolEdit}
               icon={ComponentsIcon}
             />
 

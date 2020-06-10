@@ -71,7 +71,7 @@
         "url": "user"
       },
       {
-        "name": "Administrative Location List",
+        "name": "Profile View",
         "icon": "Location2Icon",
         "url": "location"
       }
@@ -82,6 +82,18 @@
     "url": "e/application",
     "icon": "DashboardIcon",
     "children": [
+      {
+        "name": "Dashboard",
+        "icon": "SettingsIcon",
+        "url": "e/dashboard",
+        "children": [
+          {
+            "name": "School",
+            "icon": "SettingsIcon",
+            "url": "haryana_schools"
+          }
+        ]
+      },
       {
         "name": "ODK-Entries",
         "icon": "SettingsIcon",
