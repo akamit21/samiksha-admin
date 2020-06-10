@@ -9,6 +9,8 @@ import {
   required,
   minLength,
 } from 'react-admin';
+import Divider from '@material-ui/core/Divider';
+import PasswordChangeButton from './PasswordChangeButton';
 
 /**
  * Create new user
@@ -17,6 +19,8 @@ import {
 export const UserCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
+      <TextInput label='First Name' source='firstName' variant='outlined' />
+      <TextInput label='LastName' source='lastName' variant='outlined' />
       <TextInput
         label='Username'
         source='username'
@@ -29,6 +33,8 @@ export const UserCreate = (props) => (
         validate={[required()]}
         variant='outlined'
       />
+      <TextInput label='Mobile Phone' source='mobilePhone' variant='outlined' />
+      <TextInput label='Email Id' source='email' variant='outlined' />
     </SimpleForm>
   </Create>
 );
@@ -57,19 +63,11 @@ export const UserEdit = (props) => (
         validate={[required()]}
         variant='outlined'
       />
-      <TextInput
-        label='Mobile Phone'
-        source='mobilePhone'
-        validate={[required()]}
-        variant='outlined'
-      />
-      <TextInput
-        label='Email Id'
-        source='email'
-        validate={[required()]}
-        variant='outlined'
-      />
+      <TextInput label='Mobile Phone' source='mobilePhone' variant='outlined' />
+      <TextInput label='Email Id' source='email' variant='outlined' />
       <BooleanInput source='active' />
+      <Divider />
+      <PasswordChangeButton />
     </SimpleForm>
   </Edit>
 );

@@ -46,7 +46,11 @@ const ListActions = ({
 );
 const UserFilter = (props) => (
   <Filter {...props}>
-    <TextInput label='Search' source='globalSearch' alwaysOn />
+    <TextInput
+      label='Search by any attribute*'
+      source='globalSearch'
+      alwaysOn
+    />
     <BooleanInput source='active' alwaysOn />
   </Filter>
 );
