@@ -103,7 +103,7 @@ class App extends React.Component {
             />
 
             <Resource
-              name='haryana_schools'
+              name='haryana_schools_info'
               list={SchoolList}
               create={SchoolCreate}
               edit={SchoolEdit}
