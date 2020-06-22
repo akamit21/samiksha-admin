@@ -78,6 +78,9 @@ function PasswordChangeButton({ record }) {
             margin='normal'
             variant='outlined'
             onChange={(e) => handleChange(e)}
+            inputProps={{ minLength: 8 }}
+            error={!(state.password.length >= 8)}
+            helperText='Minimum length should be 8 character.'
             fullWidth
           />
           <TextField
@@ -87,6 +90,9 @@ function PasswordChangeButton({ record }) {
             margin='normal'
             variant='outlined'
             onChange={(e) => handleChange(e)}
+            inputProps={{ minLength: 8 }}
+            error={!(state.password.length >= 8)}
+            helperText='Minimum length should be 8 character.'
             fullWidth
           />
         </DialogContent>

@@ -7,7 +7,7 @@
     "description": "Local Storage for Cache"
   },
   "fusionAuth": {
-    "fusionAuthURL": "http://auth.samagra.io:9011",
+    "fusionAuthURL": "http://luezoid.com:3390/relayer",
     "fusionAuthAPIKey": "YFpyHxhW0-NoKRwQrXgCU5QIAQq8nBNhE--i5_n3pTU",
     "fusionAuthApplicationId": "a664a16a-95dd-41fc-9b9b-e45fb49cf128"
   },
@@ -33,11 +33,6 @@
       "id": "en",
       "title": "English",
       "flag": "us"
-    },
-    {
-      "id": "tr",
-      "title": "Turkish",
-      "flag": "tr"
     }
   ]
 }

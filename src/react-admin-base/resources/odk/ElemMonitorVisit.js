@@ -7,17 +7,33 @@ import {
   SingleFieldList,
   ImageField,
   TextInput,
+  AutocompleteInput,
   Filter,
   Pagination,
 } from 'react-admin';
 
-/**
- * Search filter
- * @param {*} props
- */
+const disctritChoices = require('../../../meta/district.json');
+const blockChoices = require('../../../meta/block.json');
+const designationChoices = require('../../../meta/block.json');
+
 const SearchFilter = (props) => (
   <Filter {...props}>
-    <TextInput label='Search by name*' source='data.name' alwaysOn />
+    <TextInput label='Search by name*' source='data.username' alwaysOn />
+    <AutocompleteInput
+      label='By District'
+      source='data.district'
+      choices={disctritChoices}
+    />
+    <AutocompleteInput
+      label='By Block'
+      source='data.block'
+      choices={blockChoices}
+    />
+    <AutocompleteInput
+      label='By Designation'
+      source='data.designation'
+      choices={designationChoices}
+    />
   </Filter>
 );
 
@@ -55,42 +71,72 @@ export const ElemMonitorVisitList = (props) => (
         title='data[0].school_img.filename'
       />
 
-      <TextField label='' source='data[0].lep_q_visit_a' />
-      <TextField label='' source='data[0].ler_lvl_visit_a' />
-      <TextField label='' source='data[0].m_soochi_visit_a' />
-      <TextField label='' source='data[0].act_lrn_visit_a' />
-      <TextField label='' source='data[0].stud_eng_visit_a' />
-      <TextField label='' source='data[0].lep_if_n_visit_a' />
-      <TextField label='' source='data[0].repeat_noteb' />
+      <TextField label='LEP Q Visit A' source='data[0].lep_q_visit_a' />
+      <TextField label='LER LVL Visit A' source='data[0].ler_lvl_visit_a' />
+      <TextField label='M Soochi Visit A' source='data[0].m_soochi_visit_a' />
+      <TextField label='Act LRN Visit A' source='data[0].act_lrn_visit_a' />
+      <TextField label='Stud Eng Visit A' source='data[0].stud_eng_visit_a' />
+      <TextField label='LEP Visit A' source='data[0].lep_if_n_visit_a' />
+      <TextField label='Repeat Note B' source='data[0].repeat_noteb' />
 
-      <TextField label='' source='data[0].nlep_classnumber' />
-      <TextField label='' source='data[0].nlep_cl_visit_a' />
-      <TextField label='' source='data[0].nlep_sub_visit_a' />
-      <TextField label='' source='data[0].note1' />
-      <TextField label='' source='data[0].nlep_compt_1_visit_a' />
-      <TextField label='' source='data[0].nlep_compt_2_visit_a' />
-      <TextField label='' source='data[0].nlep_compt_3_visit_a' />
-      <TextField label='' source='data[0].nlep_compt_4_visit_a' />
-      <TextField label='' source='data[0].nlep_compt_4__visit_a_no' />
-      <TextField label='' source='data[0].nlep_cl_visit_b' />
-      <TextField label='' source='data[0].nlep_sub_visit_b' />
-      <TextField label='' source='data[0].nlep_compt_1_visit_b' />
-      <TextField label='' source='data[0].nlep_compt_2_visit_b' />
-      <TextField label='' source='data[0].nlep_compt_3_visit_b' />
-      <TextField label='' source='data[0].nlep_compt_4_visit_b' />
-      <TextField label='' source='data[0].nlep_compt_4__visit_b_no' />
+      <TextField label='NLEP Classnumber' source='data[0].nlep_classnumber' />
+      <TextField label='NLEP CL Visit' source='data[0].nlep_cl_visit_a' />
+      <TextField label='NLEP Sub Visit' source='data[0].nlep_sub_visit_a' />
+      <TextField label='NLEP Note 1' source='data[0].note1' />
+      <TextField
+        label='NLEP Compt Visit A 1'
+        source='data[0].nlep_compt_1_visit_a'
+      />
+      <TextField
+        label='NLEP Compt Visit A 2'
+        source='data[0].nlep_compt_2_visit_a'
+      />
+      <TextField
+        label='NLEP Compt Visit A 3'
+        source='data[0].nlep_compt_3_visit_a'
+      />
+      <TextField
+        label='NLEP Compt Visit A 4'
+        source='data[0].nlep_compt_4_visit_a'
+      />
+      <TextField
+        label='NLEP Compt Visit A 4A'
+        source='data[0].nlep_compt_4__visit_a_no'
+      />
+      <TextField label='NLEP CL Visit B' source='data[0].nlep_cl_visit_b' />
+      <TextField label='NLEP Sub Visit B' source='data[0].nlep_sub_visit_b' />
+      <TextField
+        label='NLEP Compt Visit B 1'
+        source='data[0].nlep_compt_1_visit_b'
+      />
+      <TextField
+        label='NLEP Compt Visit B 2'
+        source='data[0].nlep_compt_2_visit_b'
+      />
+      <TextField
+        label='NLEP Compt Visit B 3'
+        source='data[0].nlep_compt_3_visit_b'
+      />
+      <TextField
+        label='NLEP Compt Visit B 4'
+        source='data[0].nlep_compt_4_visit_b'
+      />
+      <TextField
+        label='NLEP Compt Visit B 4A'
+        source='data[0].nlep_compt_4__visit_b_no'
+      />
 
-      <TextField label='' source='data[0].qual_tech_1' />
-      <TextField label='' source='data[0].qual_tech_2' />
-      <TextField label='' source='data[0].qual_tech_3' />
+      <TextField label='Qual Tech 1' source='data[0].qual_tech_1' />
+      <TextField label='Qual Tech 2' source='data[0].qual_tech_2' />
+      <TextField label='Qual Tech 3' source='data[0].qual_tech_3' />
 
-      <TextField label='' source='data[0].noteX2' />
-      <TextField label='' source='data[0].teaching_1' />
-      <TextField label='' source='data[0].teaching_2' />
+      <TextField label='Note 2' source='data[0].noteX2' />
+      <TextField label='Teaching 1' source='data[0].teaching_1' />
+      <TextField label='Teaching 2' source='data[0].teaching_2' />
 
-      <TextField label='' source='data[0].noteX3' />
-      <TextField label='' source='data[0].attention_1' />
-      <TextField label='' source='data[0].attention_2' />
+      <TextField label='Note 3' source='data[0].noteX3' />
+      <TextField label='Attention 1' source='data[0].attention_1' />
+      <TextField label='Attention 2' source='data[0].attention_2' />
 
       <TextField label='Start' source='data[0].start' />
       <TextField label='End' source='data[0].end' />

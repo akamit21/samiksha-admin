@@ -22,6 +22,26 @@ import createAdminStore from './react-admin-base/createAdminStore';
 import dP from './react-admin-base/dataProviders';
 
 import {
+  RoleCreate,
+  RoleEdit,
+  RoleList,
+} from './react-admin-base/resources/Role';
+import {
+  ResourceCreate,
+  ResourceEdit,
+  ResourceList,
+} from './react-admin-base/resources/Resources';
+import {
+  PermissionCreate,
+  PermissionEdit,
+  PermissionList,
+} from './react-admin-base/resources/Permission';
+import {
+  ApplicationEdit,
+  ApplicationList,
+} from './react-admin-base/resources/Application';
+
+import {
   SchoolCreate,
   SchoolEdit,
   SchoolList,
@@ -107,6 +127,35 @@ class App extends React.Component {
               list={SchoolList}
               create={SchoolCreate}
               edit={SchoolEdit}
+              icon={ComponentsIcon}
+            />
+
+            {/* role, resources, permission */}
+            <Resource
+              name='roles'
+              list={RoleList}
+              create={RoleCreate}
+              edit={RoleEdit}
+              icon={ComponentsIcon}
+            />
+            <Resource
+              name='resources'
+              list={ResourceList}
+              create={ResourceCreate}
+              edit={ResourceEdit}
+              icon={ComponentsIcon}
+            />
+            <Resource
+              name='permissions'
+              list={PermissionList}
+              create={PermissionCreate}
+              edit={PermissionEdit}
+              icon={ComponentsIcon}
+            />
+            <Resource
+              name='application'
+              list={ApplicationList}
+              edit={ApplicationEdit}
               icon={ComponentsIcon}
             />
 

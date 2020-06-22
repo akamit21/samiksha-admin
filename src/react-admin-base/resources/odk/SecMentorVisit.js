@@ -7,17 +7,33 @@ import {
   SingleFieldList,
   ImageField,
   TextInput,
+  AutocompleteInput,
   Filter,
   Pagination,
 } from 'react-admin';
 
-/**
- * Search filter
- * @param {*} props
- */
+const disctritChoices = require('../../../meta/district.json');
+const blockChoices = require('../../../meta/block.json');
+const designationChoices = require('../../../meta/block.json');
+
 const SearchFilter = (props) => (
   <Filter {...props}>
-    <TextInput label='Search by name*' source='data.name' alwaysOn />
+    <TextInput label='Search by name*' source='data.username' alwaysOn />
+    <AutocompleteInput
+      label='By District'
+      source='data.district'
+      choices={disctritChoices}
+    />
+    <AutocompleteInput
+      label='By Block'
+      source='data.block'
+      choices={blockChoices}
+    />
+    <AutocompleteInput
+      label='By Designation'
+      source='data.designation'
+      choices={designationChoices}
+    />
   </Filter>
 );
 
@@ -55,52 +71,52 @@ export const SecMentorVisitList = (props) => (
         title='data[0].school_img.filename'
       />
 
-      <TextField label='' source='data[0].classes_num' />
-      <TextField label='' source='data[0].cl_visit_a' />
-      <TextField label='' source='data[0].sub_visit_a' />
-      <TextField label='' source='data[0].les_plan_a' />
-      <TextField label='' source='data[0].syb_cl_a' />
-      <TextField label='' source='data[0].error_cl_a' />
-      <TextField label='' source='data[0].delivery_cl_a' />
-      <TextField label='' source='data[0].weakstd_cl_a' />
-      <TextField label='' source='data[0].prompts_cl_a' />
-      <TextField label='' source='data[0].hw_cl_a' />
-      <TextField label='' source='data[0].checking_cl_a' />
-      <TextField label='' source='data[0].weakstd_sup_cl_a' />
-      <TextField label='' source='data[0].hwstd_cl_a' />
-      <TextField label='' source='data[0].std_partp_a' />
-      <TextField label='' source='data[0].std_notes_a' />
-      <TextField label='' source='data[0].weekly_tests_a' />
-      <TextField label='' source='data[0].sat_cl_a' />
-      <TextField label='' source='data[0].fdbk_yn_a' />
-      <TextField label='' source='data[0].suggest_fdbk_a' />
-      <TextField label='' source='data[0].teach_res_a' />
-      <TextField label='' source='data[0].fdbk_a' />
-      <TextField label='' source='data[0].cl_visit_b' />
-      <TextField label='' source='data[0].sub_visit_b' />
-      <TextField label='' source='data[0].les_plan_b' />
-      <TextField label='' source='data[0].syb_cl_b' />
-      <TextField label='' source='data[0].error_cl_b' />
-      <TextField label='' source='data[0].delivery_cl_b' />
-      <TextField label='' source='data[0].weakstd_cl_b' />
-      <TextField label='' source='data[0].prompts_cl_b' />
-      <TextField label='' source='data[0].hw_cl_b' />
-      <TextField label='' source='data[0].checking_cl_b' />
-      <TextField label='' source='data[0].weakstd_sup_cl_b' />
-      <TextField label='' source='data[0].hwstd_cl_b' />
-      <TextField label='' source='data[0].std_partp_b' />
-      <TextField label='' source='data[0].std_notes_b' />
-      <TextField label='' source='data[0].weekly_tests_b' />
-      <TextField label='' source='data[0].sat_cl_b' />
-      <TextField label='' source='data[0].fdbk_yn_b' />
-      <TextField label='' source='data[0].suggest_fdbk_b' />
-      <TextField label='' source='data[0].teach_res_b' />
-      <TextField label='' source='data[0].fdbk_b' />
-      <TextField label='' source='data[0].hm_fdbk_yn' />
-      <TextField label='' source='data[0].fdbk_1' />
-      <TextField label='' source='data[0].board_pattern1' />
-      <TextField label='' source='data[0].board_pattern2' />
-      <TextField label='' source='data[0].board_papers' />
+      <TextField source='data[0].classes_num' />
+      <TextField source='data[0].cl_visit_a' />
+      <TextField source='data[0].sub_visit_a' />
+      <TextField source='data[0].les_plan_a' />
+      <TextField source='data[0].syb_cl_a' />
+      <TextField source='data[0].error_cl_a' />
+      <TextField source='data[0].delivery_cl_a' />
+      <TextField source='data[0].weakstd_cl_a' />
+      <TextField source='data[0].prompts_cl_a' />
+      <TextField source='data[0].hw_cl_a' />
+      <TextField source='data[0].checking_cl_a' />
+      <TextField source='data[0].weakstd_sup_cl_a' />
+      <TextField source='data[0].hwstd_cl_a' />
+      <TextField source='data[0].std_partp_a' />
+      <TextField source='data[0].std_notes_a' />
+      <TextField source='data[0].weekly_tests_a' />
+      <TextField source='data[0].sat_cl_a' />
+      <TextField source='data[0].fdbk_yn_a' />
+      <TextField source='data[0].suggest_fdbk_a' />
+      <TextField source='data[0].teach_res_a' />
+      <TextField source='data[0].fdbk_a' />
+      <TextField source='data[0].cl_visit_b' />
+      <TextField source='data[0].sub_visit_b' />
+      <TextField source='data[0].les_plan_b' />
+      <TextField source='data[0].syb_cl_b' />
+      <TextField source='data[0].error_cl_b' />
+      <TextField source='data[0].delivery_cl_b' />
+      <TextField source='data[0].weakstd_cl_b' />
+      <TextField source='data[0].prompts_cl_b' />
+      <TextField source='data[0].hw_cl_b' />
+      <TextField source='data[0].checking_cl_b' />
+      <TextField source='data[0].weakstd_sup_cl_b' />
+      <TextField source='data[0].hwstd_cl_b' />
+      <TextField source='data[0].std_partp_b' />
+      <TextField source='data[0].std_notes_b' />
+      <TextField source='data[0].weekly_tests_b' />
+      <TextField source='data[0].sat_cl_b' />
+      <TextField source='data[0].fdbk_yn_b' />
+      <TextField source='data[0].suggest_fdbk_b' />
+      <TextField source='data[0].teach_res_b' />
+      <TextField source='data[0].fdbk_b' />
+      <TextField source='data[0].hm_fdbk_yn' />
+      <TextField source='data[0].fdbk_1' />
+      <TextField source='data[0].board_pattern1' />
+      <TextField source='data[0].board_pattern2' />
+      <TextField source='data[0].board_papers' />
 
       <TextField label='Start' source='data[0].start' />
       <TextField label='End' source='data[0].end' />

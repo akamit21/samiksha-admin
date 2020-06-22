@@ -6,17 +6,33 @@ import {
   ArrayField,
   SingleFieldList,
   TextInput,
+  AutocompleteInput,
   Filter,
   Pagination,
 } from 'react-admin';
 
-/**
- * Search filter
- * @param {*} props
- */
+const disctritChoices = require('../../../meta/district.json');
+const blockChoices = require('../../../meta/block.json');
+const designationChoices = require('../../../meta/block.json');
+
 const SearchFilter = (props) => (
   <Filter {...props}>
-    <TextInput label='Search by name*' source='data.name' alwaysOn />
+    <TextInput label='Search by name*' source='data.username' alwaysOn />
+    <AutocompleteInput
+      label='By District'
+      source='data.district'
+      choices={disctritChoices}
+    />
+    <AutocompleteInput
+      label='By Block'
+      source='data.block'
+      choices={blockChoices}
+    />
+    <AutocompleteInput
+      label='By Designation'
+      source='data.designation'
+      choices={designationChoices}
+    />
   </Filter>
 );
 
@@ -42,16 +58,25 @@ export const SamparkVisitList = (props) => (
       </ArrayField>
       <TextField label='School Name' source='data[0].school' />
 
-      <TextField label='' source='data[0].month' />
-      <TextField label='' source='data[0].teacherTrained' />
-      <TextField label='' source='data[0].tlmUsage' />
-      <TextField label='' source='data[0].progressChartUpdated' />
-      <TextField label='' source='data[0].sequenceFollowed' />
-      <TextField label='' source='data[0].applicationLoaded' />
-      <TextField label='' source='data[0].sameTrainedTeacher' />
-      <TextField label='' source='data[0].teacherDairy' />
-      <TextField label='' source='data[0].childrenWorkbooks' />
-      <TextField label='' source='data[0].audioDevice' />
+      <TextField label='Month' source='data[0].month' />
+      <TextField label='Teacher Trained' source='data[0].teacherTrained' />
+      <TextField label='Tim Usage' source='data[0].tlmUsage' />
+      <TextField label='Progress Chart' source='data[0].progressChartUpdated' />
+      <TextField label='Sequence Followed' source='data[0].sequenceFollowed' />
+      <TextField
+        label='Application Loaded'
+        source='data[0].applicationLoaded'
+      />
+      <TextField
+        label='Same Teacher Trained'
+        source='data[0].sameTrainedTeacher'
+      />
+      <TextField label='Teacher Diary' source='data[0].teacherDairy' />
+      <TextField
+        label='Children Workbooks'
+        source='data[0].childrenWorkbooks'
+      />
+      <TextField label='Audio Device' source='data[0].audioDevice' />
 
       <TextField label='Start' source='data[0].start' />
       <TextField label='End' source='data[0].end' />

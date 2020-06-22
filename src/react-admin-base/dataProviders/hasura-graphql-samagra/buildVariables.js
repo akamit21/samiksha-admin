@@ -57,7 +57,16 @@ const buildGetListVariables = () => (resource, aorFetchType, params) => {
   }
   const filters = Object.keys(filterObj).reduce((acc, key) => {
     let filter;
-    if (key === 'ids') {
+    if (key === 'q') {
+      const field = resource.type.fields.filter((f) => {
+        return getFinalType(f.type).name === 'String';
+      });
+      const allQuery = [];
+      field.map((f) => {
+        return allQuery.push({ [f.name]: { _ilike: `%${filterObj[key]}%` } });
+      });
+      filter = { _or: [...allQuery] };
+    } else if (key === 'ids') {
       filter = { id: { _in: filterObj.ids } };
     } else if (Array.isArray(filterObj[key])) {
       filter = { [key]: { _in: filterObj[key] } };
@@ -66,12 +75,9 @@ const buildGetListVariables = () => (resource, aorFetchType, params) => {
       if (field.type.kind === 'OBJECT') {
         filter = checkForNesting(filter, filterObj, key);
       } else {
-        switch (getFinalType(field.type).kind) {
+        switch (getFinalType(field.type).name) {
           case 'String':
             filter = { [key]: { _ilike: `%${filterObj[key]}%` } };
-            break;
-          case 'OBJECT':
-            filter = checkForNesting(filter, filterObj, key);
             break;
           default:
             filter = { [key]: { _eq: filterObj[key] } };

@@ -11,7 +11,11 @@ import userDataProvider from './dataProvider.package';
 
 const config = require('../../config');
 
-const dataProviderOldData = userDataProvider(config.fusionAuth);
+// const dataProviderOldData = userDataProvider(config.fusionAuth);
+const dataProviderOldData = userDataProvider({
+  ...config.fusionAuth,
+  avoidApplicationId: true,
+});
 export default {
   getList: (resource, params) =>
     dataProviderOldData(GET_LIST, resource, params),

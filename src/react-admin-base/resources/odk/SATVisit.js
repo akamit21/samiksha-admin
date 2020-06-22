@@ -7,17 +7,33 @@ import {
   ImageField,
   SingleFieldList,
   TextInput,
+  AutocompleteInput,
   Filter,
   Pagination,
 } from 'react-admin';
 
-/**
- * Search filter
- * @param {*} props
- */
+const disctritChoices = require('../../../meta/district.json');
+const blockChoices = require('../../../meta/block.json');
+const designationChoices = require('../../../meta/block.json');
+
 const SearchFilter = (props) => (
   <Filter {...props}>
-    <TextInput label='Search by name*' source='data.name' alwaysOn />
+    <TextInput label='Search by name*' source='data.username' alwaysOn />
+    <AutocompleteInput
+      label='By District'
+      source='data.district'
+      choices={disctritChoices}
+    />
+    <AutocompleteInput
+      label='By Block'
+      source='data.block'
+      choices={blockChoices}
+    />
+    <AutocompleteInput
+      label='By Designation'
+      source='data.designation'
+      choices={designationChoices}
+    />
   </Filter>
 );
 
@@ -59,6 +75,7 @@ export const SATVisitList = (props) => (
       />
 
       <TextField label='Cheating Level' source='data[0].cheating_level' />
+      <TextField label='Cheating' source='data[0].cheating["a"]' />
       <TextField label='Start' source='data[0].start' />
       <TextField label='End' source='data[0].end' />
       <TextField label='Today' source='data[0].today' />

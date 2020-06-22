@@ -88,4 +88,5 @@ function authProvider(config) {
     },
   };
 }
+
 export default authProvider;

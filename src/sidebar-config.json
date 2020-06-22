@@ -1,5 +1,25 @@
 [
   {
+    "name": "Roles",
+    "icon": "BarChartIcon",
+    "url": "roles"
+  },
+  {
+    "name": "Resources",
+    "icon": "BarChartIcon",
+    "url": "resources"
+  },
+  {
+    "name": "Permissions",
+    "icon": "BarChartIcon",
+    "url": "permissions"
+  },
+  {
+    "name": "Applications",
+    "icon": "BarChartIcon",
+    "url": "application"
+  },
+  {
     "name": "Saksham Dashboards",
     "icon": "BarChartIcon",
     "url": "e/saksham",
@@ -69,11 +89,6 @@
         "name": "User List",
         "icon": "UsersIcon",
         "url": "user"
-      },
-      {
-        "name": "Profile View",
-        "icon": "Location2Icon",
-        "url": "location"
       }
     ]
   },

@@ -1,13 +1,19 @@
+import { store } from '../../e/utils/localsotage.service';
+
 const GET_LIST = 'GET_LIST';
 const GET_ONE = 'GET_ONE';
 const GET_MANY = 'GET_MANY';
 const CREATE = 'CREATE';
 const UPDATE = 'UPDATE';
 const DELETE = 'DELETE';
-const { FusionAuthClient } = require('@fusionauth/node-client');
+const { FusionAuthClient } = require('../../@fusionauth/node-client');
 
 function fusionAuthDataProvider(
-  config = { fusionAuthAPIKey: '', fusionAuthURL: '' }
+  config = {
+    fusionAuthAPIKey: '',
+    fusionAuthURL: '',
+    avoidApplicationId: false,
+  }
 ) {
   if (!config.fusionAuthAPIKey || !config.fusionAuthURL) {
     console.log(
@@ -15,10 +21,15 @@ function fusionAuthDataProvider(
     );
   }
 
-  return (type, resource, params) => {
+  return async (type, resource, params) => {
+    if (params.fusionAuthConfig) {
+      config = { ...config, ...params.fusionAuthConfig };
+    }
+    const u = await store.getItem('user');
     const client = new FusionAuthClient(
       config.fusionAuthAPIKey,
-      config.fusionAuthURL
+      config.fusionAuthURL,
+      u ? u.token : ''
     );
     switch (type) {
       case GET_LIST: {
@@ -34,11 +45,16 @@ function fusionAuthDataProvider(
           sortFields.push(sort);
         }
 
-        let queryString = `(registrations.applicationId: ${config.fusionAuthApplicationId})`;
+        let queryString = config.avoidApplicationId
+          ? ''
+          : `(registrations.applicationId: ${config.fusionAuthApplicationId})`;
         const {
           filter: { globalSearch },
         } = params;
         if (globalSearch) {
+          if (queryString) {
+            queryString += 'AND';
+          }
           queryString += `AND(${globalSearch}*)`;
           delete params.filter.globalSearch;
         }
