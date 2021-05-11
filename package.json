@@ -24,7 +24,7 @@
     "jsoneditor": "^8.6.6",
     "jsoneditor-react": "^3.0.0",
     "localforage": "1.7.3",
-    "lodash": "4.17.15",
+    "lodash": "4.17.21",
     "node-sass": "4.13.1",
     "points-cluster": "^0.1.4",
     "prop-types": "15.7.2",
